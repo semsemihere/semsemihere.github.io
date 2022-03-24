@@ -170,9 +170,10 @@ body{
 }
 
 .card-img{
-    background-color: aqua;
+    background-color: rgb(85, 94, 114);
     height: 280px; 
     margin-bottom: 15px;
     background-size: cover;
     border-radius: 14px;
+    align-items: center;
 }
