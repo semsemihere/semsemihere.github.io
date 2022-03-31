@@ -1,3 +1,26 @@
+let hits = 0; 
+
+const count = document.querySelector(".count");
+const catContainer = document.getElementById("cat-container");
+
+count.addEventListener("click", AddNew);
+
+function AddNew() {
+    hits++;
+    renderHits();
+
+    const newDiv = document.createElement("div");
+    console.log("add");
+    newDiv.classList.add("div-shadow");
+    catContainer.appendChild(newDiv);
+}
+
+function renderHits(){
+    count.innerHTML = hits; 
+}
+
+
+//// CLASS WORK 
 // console.log("the Mess age!");
 
 // // an empty array to keep track of clicks??!!!!
@@ -12,7 +35,7 @@
 //     theBody.style.backgroundColor = "yellow";
 // }
 
-
+//// TEMP TRY
 // const count = document.querySelector(".hits");
 // const catContainer = document.querySelector("#catContainer");
 
@@ -36,25 +59,3 @@
 // function renderHits(){
 //     count.innerHTML = hits; 
 // }
-
-let hits = 0; 
-
-
-const count = document.querySelector(".count");
-const catContainer = document.getElementById("cat-container");
-
-count.addEventListener("click", AddNew);
-
-function AddNew() {
-    hits++;
-    renderHits();
-
-    const newDiv = document.createElement("div");
-    console.log("add");
-    newDiv.classList.add("div-shadow");
-    catContainer.appendChild(newDiv);
-}
-
-function renderHits(){
-    count.innerHTML = hits; 
-}
