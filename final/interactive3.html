@@ -1,0 +1,110 @@
+<!-- 
+    Wordle Modivated Page
+ -->
+<html>
+	<head> 
+		<title>Guess</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+	<body>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Tapestry&display=swap');
+
+            body{
+                font-family: 'Tapestry', cursive; 
+            }
+
+            title{
+                font-size: 32px; 
+                letter-spacing: 2px; 
+            }
+
+           
+
+            input{
+                width: 50px; 
+                height: 50px; 
+                font-size: 40px; 
+                text-align: center;
+                border-radius: 8px;
+                border-color: gray; 
+                border-width: thick;
+            }
+        </style>
+
+        <h1 class = "title">Who are you?</h1>
+        <h2>Type in lowercase</h2>
+        <hr>
+        <br>
+
+
+       <input class = "input">
+       <input class = "input">
+       <input class = "input">
+       <input class = "input">
+       <input class = "input">
+
+       <button>submit</button>
+
+       <script>
+            var answer = "alice"; 
+            var correct = 0; 
+
+            document.querySelector("button").addEventListener("click",
+                function(){
+                    // variable input
+                    var input = document.querySelectorAll(".input");
+                    correct = 0; // reset the correct count every time
+                    for(let i = 0; i < 5; ++i){
+                            // if the input pos == answer pos
+                            // green
+                            if(input[i].value == answer[i]){
+                                input[i].style.background = "green";
+                                correct += 1; 
+                            }
+                            // if the input has different position but is part of an answer
+                            else if (answer.includes(input[i].value)){
+                                input[i].style.background = "yellow";
+                            }
+                            else{
+                                input[i].style.background = "lightgrey";
+                            }
+
+                            input[i].classList.remove('input');
+                            
+                    } 
+
+                    // gives chance after submission
+                    var template = `<div>
+                        <input class = "input">
+                        <input class = "input">
+                        <input class = "input">
+                        <input class = "input">
+                        <input class = "input">
+                        </div>`;
+                    
+                    // if the word is correct; move to the next page
+                    if(correct == 5){
+                        pageRedirect();
+                    }
+                    // else: give another chance
+                    else{
+                        document.querySelector("body").insertAdjacentHTML
+                        ('beforeend', template);
+                    }
+                    
+                    
+                    console.log(correct);
+                    
+                }
+           )
+           function pageRedirect() {
+                window.location.replace("end.html");
+            }  
+
+           
+       </script>
+	</body>
+
+</html>
