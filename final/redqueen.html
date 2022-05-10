@@ -5,16 +5,89 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">            
 
         <style>
-            
+			@import url('https://fonts.googleapis.com/css2?family=Tapestry&display=swap');
 
+			body{
+				margin: 10px; 
+				padding: 10px; 
+				min-height: 100vh; 
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				background: #83a4be;
+			}
+
+			h1{
+				color: rgb(0, 0, 0); 
+				font-size: 26px;
+			}
+
+			h2{
+				color: rgb(0, 0, 0);
+				font-size: 20px;
+			}
+
+			p{
+				font-family: 'Tapestry', cursive;
+				font-size: 32px; 
+				text-align:center;
+			}
+
+			div {
+				width: 100px;
+				height: 100px;
+				background: transparent;
+				position: relative;
+				animation: mymove 3s;
+				animation-play-state: running;
+			}
+
+            img{
+				/* width: 100px; 
+				height: 100px;  */
+				margin: 50px; 
+                position: relative;
+			}
+
+			.crow{
+				position: absolute;
+				right: 500px;
+				width: 80px; 
+				height: 80px; 
+				animation: fly 5s linear infinite; 
+			}
+
+			.tweedle{
+				width: 200px; 
+				height: 200px;
+			}
+
+			@keyframes fly{
+				from {top: 50px; left: 1500px;}
+                to {top: 250px; left: -500px;}
+			}
+			
 		</style>
     </head>
 
 	<body>
-        
+		<p>
+            Tweedledee and Tweedledum is fighting over a broken rattle
+			<br>
+            Make them to forget their argument.
+        </p>
 
 		
-		<h2>Hi not ready yet..</h2>
+		<h2>Hint: Who stops Tweedledum and Tweedledee from fighting?</h2>
+        
+		<div class="tweedle">
+			<img src="assets/dumdee.png">
+		</div>
+		
+		<div class="crow">
+			<img src="assets/crow.png">
+		</div>
+
         
 
         
